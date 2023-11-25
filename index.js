@@ -27,6 +27,21 @@ app.get('/', (req, res) => {
     res.send("Hi There!")
 })
 
+app.post('/random', (req, res) => {
+    const code = {
+        code: req.body.code
+    }
+    res.send({
+        "access_token": "ya29.a0AfB_byBx8DyzWdd-PaZiFJpeYPZ_NYqzrzE2Hvzwv2XA6_JbOKf05DUmzqO7Ps5PZoy7fBRTCR3P4NEWmB-4Dw2Kw_jXT3_kQM3Rysd12vZTEipWx9lRQlv_MK0-u9sQoPrTLSjjKBcWRjaC4DQVOtaA0jBwyoVNmNsraCgYKAToSARISFQHGX2MiNPqMpkiGFPf_SIi-fSozJA0171",
+        "refresh_token": "1//0gB4hbsWsNwX4CgYIARAAGBASNwF-L9Ir4BWvUu57pKc61XGj6ew5WcKYMnFYiPcQh7-2YCs00pDgFpjq4e4aGhX5s9qswOfpMfw",
+        "scope": "https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.metadata.readonly https://www.googleapis.com/auth/userinfo.profile",
+        "token_type": "Bearer",
+        "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjViMzcwNjk2MGUzZTYwMDI0YTI2NTVlNzhjZmE2M2Y4N2M5N2QzMDkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI0MTU3ODIwMTYxNzUtcDJ0am04N2s3YWNyZXM5Zmo5NTA2dnNrMm1uaG01NG8uYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI0MTU3ODIwMTYxNzUtcDJ0am04N2s3YWNyZXM5Zmo5NTA2dnNrMm1uaG01NG8uYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDI1NzI4MjYxNzU1NDg3MTEyODUiLCJhdF9oYXNoIjoid3N0TXZYeGx4b0dldkN5RDhyR0FPdyIsIm5hbWUiOiJBbnVyYWcgS3VtYXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSUx1WC1qTWFxT2VJanhhM0VUUmNCaUtxTnZPM1NHckNJejVlUnRnbGpidWxjPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkFudXJhZyIsImZhbWlseV9uYW1lIjoiS3VtYXIiLCJsb2NhbGUiOiJlbiIsImlhdCI6MTcwMDU5OTY1NiwiZXhwIjoxNzAwNjAzMjU2fQ.RkgGCocdMXNgipUWQPC0wukA95ymX0NJQLWQiCRHfOGgEl3gMhe-VEI1baZ2c4vKQN4VXMGV51TM5136G33rSp095bDEsLAdJBI-xTUFhd1NlEJVmFoL3CSWwnAyiUtH_zlQzznhj2h5US42DvUVK1c-CpjQKlRV2Ij7dRZJ6-KgzyL9iRPEzRzsLehHhWTVYOa0-G6MBqZOuBT7jwd5tF7_V37pO6z5LFxXQF0MBj2VTD-DubS6iqD8W_NRY8dNCS_4dothn7NHi70Or1PjPTdfJUerDs5PnX_lqwHGZnaLWoBgLjDwYrCoc4_GgZKB3jv8ERT6oVoGwpBz5EdYFA",
+        "expiry_date": 1700603253518
+    });
+});
+
+
 app.get('/getAuthUrl', (req, res) => {
     const authUrl = oAuth2Client.generateAuthUrl({
         access_type: "offline",
